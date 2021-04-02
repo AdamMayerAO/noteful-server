@@ -1,0 +1,34 @@
+{
+  "name": "noteful-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require test/setup.js",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "predeploy": "npm audit",
+    "deploy": "git push heroku master",
+    "migrate": "postgrator --config postgrator-config.js",
+  },
+  "keywords": [],
+  "author": "Adam Mayer <r.adammayer@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "knex": "^0.95.4",
+    "mocha": "^8.3.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "postgrator-cli": "^4.0.0",
+    "supertest": "^6.1.3",
+    "valid-url": "^1.0.9",
+    "winston": "^3.3.3",
+    "xss": "^1.0.8"
+  }
+}
