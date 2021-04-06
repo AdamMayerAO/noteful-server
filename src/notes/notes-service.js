@@ -1,12 +1,22 @@
 const notesService = {
     getAllNotes(knex) {
-      return knex.select('*').from('noteful_notes')
+      return knex
+      .select('*')
+      .from('noteful_notes')
     },
     getById(knex, id) {
-      return knex.from('noteful_notes').select('*').where('id', id).first()
+      return knex
+      .from('noteful_notes')
+      .select('*')
+      .where('id', id)
+      .first()
     },
     getByFolder(knex, folderId){
-        return knex.from('noteful_notes').select('*').where('noteful_folder', folderId).first()
+        return knex
+        .from('noteful_notes')
+        .select('*')
+        .where('noteful_folder', folderId)
+        .first()
     },
 
     addNote(knex, newNote) {

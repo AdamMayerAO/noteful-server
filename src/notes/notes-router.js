@@ -57,7 +57,7 @@ notesRouter
 notesRouter
   .route('/:note_id')
   .all((req, res, next) => {
-    const { note_id } = req.params.note_id
+    const { note_id } = req.params
    notesService.getById(req.app.get('db'), note_id)
       .then(note => {
         if (!note) {
@@ -76,7 +76,7 @@ notesRouter
     res.json(serializeNote(res.note))
   })
   .delete((req, res, next) => {
-    const { note_id } = req.params.note_id
+    const { note_id } = req.params
     notesService.deleteNote(
       req.app.get('db'),
       note_id

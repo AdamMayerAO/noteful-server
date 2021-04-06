@@ -12,7 +12,6 @@ const serializeFolder = folder => ({
   title: xss(folder.title),
   modified: folder.date_published,
 })
-
 foldersRouter
   .route('/')
   .get((req, res, next) => {
@@ -52,7 +51,8 @@ foldersRouter
 foldersRouter
   .route('/:folder_id')
   .all((req, res, next) => {
-    const { folder_id } = req.params.folder_id
+    const { folder_id } = req.params
+    console.log(req.params)
    foldersService.getById(req.app.get('db'), folder_id)
       .then(folder => {
         if (!folder) {
@@ -65,13 +65,12 @@ foldersRouter
         next()
       })
       .catch(next)
-
   })
   .get((req, res) => {
     res.json(serializeFolder(res.folder))
   })
   .delete((req, res, next) => {
-    const { folder_id } = req.params.folder_id
+    const { folder_id } = req.params
     foldersService.deleteFolder(
       req.app.get('db'),
       folder_id
