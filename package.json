@@ -27,13 +27,13 @@
     "lodash": "^4.17.19",
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
+    "postgrator-cli": "^4.0.0",
     "xss": "^1.0.8"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.2.0",
     "nodemon": "^2.0.4",
-    "postgrator-cli": "^4.0.0",
     "supertest": "^4.0.2"
   }
 }
